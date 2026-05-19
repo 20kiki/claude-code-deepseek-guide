@@ -2,8 +2,9 @@
   <h1>Claude Code + DeepSeek 从零安装教程</h1>
   <p>面向纯小白的完整安装指南 —— 跟着走，30 分钟内拥有自己的 AI 编程助手</p>
 
-  [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-  [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)]()
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)]()
+  [![Stars](https://img.shields.io/github/stars/20kiki/claude-code-deepseek-guide)](https://github.com/20kiki/claude-code-deepseek-guide)
 </div>
 
 ---
