@@ -363,6 +363,10 @@ source ~/.zshrc
 - [DeepSeek API 文档](https://platform.deepseek.com/api-docs)
 - [DeepSeek 价格页](https://platform.deepseek.com/pricing)
 
+## 👤 作者
+
+[@20kiki](https://github.com/20kiki)
+
 ## 📄 许可证
 
 本项目基于 [MIT](LICENSE) 协议开源。
