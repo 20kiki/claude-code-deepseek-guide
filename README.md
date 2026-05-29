@@ -19,6 +19,7 @@
   - [Step 1: Install Git](#step-1-install-git)
   - [Step 2: Install Node.js](#step-2-install-nodejs)
   - [Step 3: Install Claude Code](#step-3-install-claude-code)
+  - [Skip First-Time Login](#skip-first-time-login)
   - [Step 4: Get a DeepSeek API Key](#step-4-get-a-deepseek-api-key)
   - [Step 5: Configure Claude Code for DeepSeek](#step-5-configure-claude-code-for-deepseek)
   - [Step 6: Verify Everything Works](#step-6-verify-everything-works)
@@ -177,6 +178,83 @@ You should see a version number (e.g., `2.1.144 (Claude Code)`).
 
 ---
 
+### Skip First-Time Login
+
+When you first run `claude`, Claude Code normally asks you to log in with an Anthropic account. Since we're using DeepSeek as the backend, skip this by creating a `.claude.json` file:
+
+#### Config File Location
+
+| System | Path |
+|:---|:---|
+| **Windows** | `C:\Users\YourUsername\.claude\.claude.json` |
+| **macOS / Linux** | `~/.claude/.claude.json` |
+
+#### Edit .claude.json
+
+Open `.claude.json` — there are two possible situations:
+
+**Situation A: File doesn't exist (fresh install)**
+
+Create the file and write:
+
+```json
+{
+  "hasCompletedOnboarding": true
+}
+```
+
+**Situation B: File already exists (Claude Code was installed before)**
+
+Open the existing file. You might see something like:
+
+```json
+{
+  "installMethod": "native",
+  "autoUpdates": true
+}
+```
+
+Notice: the line `"autoUpdates": true` has **no trailing comma** — because it's the last item.
+
+To add the new config, do two things:
+1. Add an English comma `,` at the end of the **last existing line** (after `true`)
+2. On a new line, add `"hasCompletedOnboarding": true`
+
+After editing:
+
+```json
+{
+  "installMethod": "native",
+  "autoUpdates": true,
+  "hasCompletedOnboarding": true
+}
+```
+
+> 💡 **What's the comma for?**
+>
+> In JSON, commas `,` **separate multiple fields at the same level** — like saying "this one's done, here comes the next." Two simple rules:
+> - Fields **between** other fields must be separated by a comma
+> - The **last field** must NOT have a trailing comma (nothing comes after it)
+>
+> If there's only one field inside `{ }` (like Situation A), it's both the first and the last — so no comma is needed.
+
+**What does this JSON mean?**
+
+- The outer `{ }` is the **standard JSON wrapper** — all config must live inside these curly braces
+- `"hasCompletedOnboarding"` is a **config key** — it asks "has the user finished the first-time setup?"
+- `true` is its **value** — meaning "yes, it's done"; `false` would mean "no, not yet"
+- The colon `:` between them means "is set to"
+- In plain English: tell Claude Code "the onboarding is already done, don't show the login screen"
+
+> ⚠️ **JSON formatting tips**:
+> - Curly braces `{ }`, colons `:`, and commas `,` must all be **standard English half-width characters** — Chinese full-width punctuation (`，` `：`) will break the file
+> - Config **keys** (like `"hasCompletedOnboarding"`) must be wrapped in English double quotes `" "`
+> - `true` / `false` should NOT be quoted — they are JSON boolean keywords, not strings
+
+**Close and save the file**. Now when you run `claude`, it will skip the login screen and go straight to the AI prompt.
+
+---
+
 ### Step 4: Get a DeepSeek API Key
 
 DeepSeek API is **pay-as-you-go** — you only pay for what you use, not a monthly subscription. Minimum top-up is ¥1, which lasts a long time for casual use.
@@ -250,11 +328,11 @@ Open the file in any text editor and paste the following (replace `sk-your-key-h
 | `CLAUDE_CODE_SUBAGENT_MODEL` | Sub-agents use the lighter model to save tokens |
 | `CLAUDE_CODE_EFFORT_LEVEL` | `max` = strongest reasoning capability |
 
-> 💡 **Model choice**: Primary recommendation is `deepseek-v4-pro[1m]`; lightweight tasks use `deepseek-v4-flash`. You can also use `deepseek-chat` (V3.1) or `deepseek-reasoner` (R1 reasoning mode).
+> 💡 **Model choice**: Primary recommendation is `deepseek-v4-pro[1m]`; lightweight tasks use `deepseek-v4-flash`.
 
 #### 5.3 Save
 
-Save the file. **No restart required** — proceed to verification.
+**Close and save the file**, then proceed to verification.
 
 ---
 
