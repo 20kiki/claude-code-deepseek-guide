@@ -331,7 +331,7 @@ DeepSeek API 是**按量付费**的，用多少扣多少，不是按月订阅。
 | `CLAUDE_CODE_SUBAGENT_MODEL` | 子代理用轻量模型，节省 token |
 | `CLAUDE_CODE_EFFORT_LEVEL` | `max` = 启用最强推理能力 |
 
-> 💡 **模型选择**：主力推荐 `deepseek-v4-pro[1m]`，轻量任务用 `deepseek-v4-flash`。也可以用 `deepseek-chat`（V3.1）或 `deepseek-reasoner`（R1 推理模式）。
+> 💡 **模型选择**：主力推荐 `deepseek-v4-pro[1m]`，轻量任务用 `deepseek-v4-flash`。
 
 #### 5.3 保存
 
