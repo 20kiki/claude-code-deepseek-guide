@@ -439,8 +439,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Issues and PRs welcome.
 ## 📄 References
 
 - [Claude Code Official Docs](https://docs.anthropic.com/en/docs/claude-code)
-- [DeepSeek API Docs](https://platform.deepseek.com/api-docs)
-- [DeepSeek Pricing](https://platform.deepseek.com/pricing)
+- [DeepSeek API Docs](https://api-docs.deepseek.com/)
+- [DeepSeek Pricing](https://api-docs.deepseek.com/quick_start/pricing)
 
 ## 👤 Author
 

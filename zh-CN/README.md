@@ -442,8 +442,8 @@ source ~/.zshrc
 ## 📄 参考资源
 
 - [Claude Code 官方文档](https://docs.anthropic.com/en/docs/claude-code)
-- [DeepSeek API 文档](https://platform.deepseek.com/api-docs)
-- [DeepSeek 价格页](https://platform.deepseek.com/pricing)
+- [DeepSeek API 文档](https://api-docs.deepseek.com/zh-cn/)
+- [DeepSeek 价格页](https://api-docs.deepseek.com/zh-cn/quick_start/pricing)
 
 ## 👤 作者
 
